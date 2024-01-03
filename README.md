@@ -37,6 +37,8 @@ Review and Rating System: Transparency is key, so a review and rating system to 
 
 React Query: To ensure efficient data synchronization and state management, React Query is employed, ensuring a smooth and responsive user experience.
 
+
+Some Features:
 If you wish to register as a seller, you can do so during the sign-up process:
 
 ![Landing Page](images/signing_up_before.png)
@@ -44,5 +46,8 @@ If you wish to register as a seller, you can do so during the sign-up process:
 Landing page after signing up:
 
 ![Landing Page](images/signing_up_after.png)
+
+About Vite:
+"Vite + ReactJS" for building modern web applications. Vite offers fast development server and build time. When used together, Vite's speed and React's component-based approach make for an efficient and enjoyable development experience.
 
 At the heart of the project is a commitment to environmental sustainability. By creating a thrift store application, users are encouraged to embrace a more responsible and eco-conscious approach to shopping. By offering a seamless and secure e-commerce experience, I hope to inspire positive change in the way people consume and recycle fashion and goods. 🛍️🌿
