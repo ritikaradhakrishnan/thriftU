@@ -39,8 +39,8 @@ React Query: To ensure efficient data synchronization and state management, Reac
 
 If you wish to register as a seller, you can do so during the sign-up process:
 
-![Landing Page](images/signing_up.png)
-Landin page after signing up:
-![Landing Page](images/signing_up_continued.png)
+![Landing Page](images/signing_up_before.png)
+Landing page after signing up:
+![Landing Page](images/signing_up_after.png)
 
 At the heart of the project is a commitment to environmental sustainability. By creating a thrift store application, users are encouraged to embrace a more responsible and eco-conscious approach to shopping. By offering a seamless and secure e-commerce experience, I hope to inspire positive change in the way people consume and recycle fashion and goods. 🛍️🌿
