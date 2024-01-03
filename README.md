@@ -1,13 +1,25 @@
 🌱 MERN Stack Thrift Store: Sustainable Shopping for a Greener Tomorrow 🌍
 
+## Getting Started
+### Starting the API Server
+
+To start the API server, open your terminal and run the following commands:
+```bash
+cd api
+yarn start
+```
+### Starting the Client Side
+To start the client application, open your terminal and run the following commands:
+```bash
+cd client
+yarn run dev
+```
 Technologies Used:
 
 React.js: The frontend of the application is built with React.js (powered by Vite), offering an intuitive and engaging user interface for an optimal shopping experience.
-![Landing page](images/landing_page.png)
-
+![Landing Page](images/yourimage.png)
 
 Node.js: Leveraging the power of Node.js, the server-side logic is handled efficiently, ensuring seamless operations and high performance.
-![Server Side](images/server_side.png)
 
 MongoDB: I employ MongoDB for database management, facilitating robust data storage and retrieval for our application.
 
