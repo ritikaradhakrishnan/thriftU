@@ -7,6 +7,7 @@ React.js: The frontend of the application is built with React.js (powered by Vit
 
 
 Node.js: Leveraging the power of Node.js, the server-side logic is handled efficiently, ensuring seamless operations and high performance.
+![Server Side](images/server_side.png)
 
 MongoDB: I employ MongoDB for database management, facilitating robust data storage and retrieval for our application.
 
