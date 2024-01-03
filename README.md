@@ -17,7 +17,7 @@ yarn run dev
 Technologies Used:
 
 React.js: The frontend of the application is built with React.js (powered by Vite), offering an intuitive and engaging user interface for an optimal shopping experience.
-![Landing Page](images/yourimage.png)
+![Landing Page](images/landing_page.png)
 
 Node.js: Leveraging the power of Node.js, the server-side logic is handled efficiently, ensuring seamless operations and high performance.
 
@@ -36,5 +36,10 @@ Image Uploading with Cloudinary: The application enables users to upload images 
 Review and Rating System: Transparency is key, so a review and rating system to help users make informed decisions when purchasing thrifted items.
 
 React Query: To ensure efficient data synchronization and state management, React Query is employed, ensuring a smooth and responsive user experience.
+
+If you wish to register as a seller, you can do so during the sign-up process:
+
+![Landing Page](images/signing_up.png)
+![Landing Page](images/signing_up_continued.png)
 
 At the heart of the project is a commitment to environmental sustainability. By creating a thrift store application, users are encouraged to embrace a more responsible and eco-conscious approach to shopping. By offering a seamless and secure e-commerce experience, I hope to inspire positive change in the way people consume and recycle fashion and goods. 🛍️🌿
