@@ -3,7 +3,7 @@
 Technologies Used:
 
 React.js: The frontend of the application is built with React.js (powered by Vite), offering an intuitive and engaging user interface for an optimal shopping experience.
-![Uploading Screenshot 2024-01-03 at 8.02.32 PM.png…]()
+![Landing page](images/landing_page.png)
 
 
 Node.js: Leveraging the power of Node.js, the server-side logic is handled efficiently, ensuring seamless operations and high performance.
