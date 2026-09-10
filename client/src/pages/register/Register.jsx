@@ -6,6 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [file, setFile] = useState(null);
+  const [otp, setOtp] = useState("");
+  const [isSendingOtp, setIsSendingOtp] = useState(false);
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [status, setStatus] = useState("");
+  const [error, setError] = useState("");
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -29,18 +34,53 @@ function Register() {
       return { ...prev, isSeller: e.target.checked };
     });
   };
+
+  const requestOtp = async () => {
+    setError("");
+    setStatus("");
+
+    if (!user.email) {
+      setError("Add your email first so thriftU knows where to send the code.");
+      return;
+    }
+
+    setIsSendingOtp(true);
+    try {
+      const res = await newRequest.post("/auth/request-otp", {
+        email: user.email,
+      });
+      const devCode = res.data?.devOtp ? ` Dev code: ${res.data.devOtp}` : "";
+      setStatus(`Code sent to ${user.email}.${devCode}`);
+    } catch (err) {
+      setError(err.response?.data || "Could not send the code. Try again.");
+    } finally {
+      setIsSendingOtp(false);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setStatus("");
 
-    const url = await upload(file);
+    if (!otp.trim()) {
+      setError("Enter the email code before creating your account.");
+      return;
+    }
+
+    setIsRegistering(true);
     try {
+      const url = file ? await upload(file) : "";
       await newRequest.post("/auth/register", {
         ...user,
         img: url,
+        otp,
       });
       navigate("/")
     } catch (err) {
-      console.log(err);
+      setError(err.response?.data || "Could not create the account. Check the code and try again.");
+    } finally {
+      setIsRegistering(false);
     }
   };
   return (
@@ -62,6 +102,19 @@ function Register() {
             placeholder="email"
             onChange={handleChange}
           />
+          <div className="otpRow">
+            <input
+              value={otp}
+              type="text"
+              inputMode="numeric"
+              maxLength="6"
+              placeholder="6-digit code"
+              onChange={(e) => setOtp(e.target.value)}
+            />
+            <button type="button" onClick={requestOtp} disabled={isSendingOtp}>
+              {isSendingOtp ? "Sending..." : "Send code"}
+            </button>
+          </div>
           <label htmlFor="">Password</label>
           <input name="password" type="password" onChange={handleChange} />
           <label htmlFor="">Profile Picture</label>
@@ -73,7 +126,11 @@ function Register() {
             placeholder="Usa"
             onChange={handleChange}
           />
-          <button type="submit">Register</button>
+          {status && <p className="formStatus">{status}</p>}
+          {error && <p className="formError">{error}</p>}
+          <button type="submit" disabled={isRegistering}>
+            {isRegistering ? "Creating..." : "Register"}
+          </button>
         </div>
         <div className="right">
           <h1>I want to become a thriftU seller</h1>

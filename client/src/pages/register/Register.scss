@@ -6,6 +6,12 @@
   input, textarea { padding: 13px; border: 1px solid #bcb9b1; background: white; outline: none; }
   input:focus, textarea:focus { border-color: #173b2d; box-shadow: 0 0 0 2px #e9ff70; }
   button { min-height: 48px; margin-top: 14px; border: 1px solid #17221d; background: #ff6b4a; font-weight: 900; cursor: pointer; }
+  button:disabled { opacity: .65; cursor: not-allowed; }
+  .otpRow { display: grid; grid-template-columns: 1fr 132px; gap: 10px; align-items: stretch; }
+  .otpRow button { margin-top: 0; background: #173b2d; color: white; }
+  .formStatus, .formError { margin: 6px 0 0; padding: 12px; font-size: 13px; line-height: 1.35; }
+  .formStatus { background: #edf7ef; color: #173b2d; border: 1px solid #b7d8bd; }
+  .formError { background: #fff0ea; color: #8d240f; border: 1px solid #ffb399; }
   .toggle { display: flex; align-items: center; justify-content: space-between; padding: 14px; background: #edf7ef; }
   .switch { position: relative; width: 48px; height: 25px; }
   .switch input { opacity: 0; width: 0; height: 0; }
@@ -18,4 +24,5 @@
   padding: 40px 16px;
   form { grid-template-columns: 1fr; gap: 44px; padding: 28px 22px; box-shadow: 6px 6px 0 #e9ff70; }
   h1 { min-height: 0; }
+  .otpRow { grid-template-columns: 1fr; }
 } }
