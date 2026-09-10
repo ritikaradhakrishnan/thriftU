@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Gigs.scss";
 import GigCard from "../../components/gigCard/GigCard";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useLocation } from "react-router-dom";
+import { gigs as curatedGigs } from "../../data";
 
 function Gigs() {
   const [sort, setSort] = useState("sales");
@@ -12,29 +13,25 @@ function Gigs() {
   const maxRef = useRef();
 
   const { search } = useLocation();
+  const params = new URLSearchParams(search);
+  const searchTerm = params.get("search") || "";
 
   const { isLoading, error, data, refetch } = useQuery({
-    queryKey: ["gigs"],
+    queryKey: ["gigs", search, sort],
     queryFn: () =>
       newRequest
         .get(
-          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+          `/gigs?${params.toString()}&min=${minRef.current?.value || ""}&max=${maxRef.current?.value || ""}&sort=${sort}`
         )
         .then((res) => {
           return res.data;
         }),
   });
 
-  console.log(data);
-
   const reSort = (type) => {
     setSort(type);
     setOpen(false);
   };
-
-  useEffect(() => {
-    refetch();
-  }, [sort]);
 
   const apply = () => {
     refetch();
@@ -43,14 +40,12 @@ function Gigs() {
   return (
     <div className="gigs">
       <div className="container">
-        <span className="breadcrumbs">ThriftU Items</span>
-        <h1>Vintage and Rare</h1>
-        <p>
-        From Once Owned to Newly Treasured: Items with Stories to Tell.
-        </p>
+        <span className="breadcrumbs">Marketplace / Curated finds</span>
+        <h1>{searchTerm ? `Results for “${searchTerm}”` : "Vintage, rare, and worth finding"}</h1>
+        <p>One-of-one pieces selected by independent sellers and thriftU Scout.</p>
         <div className="menu">
           <div className="left">
-            <span>Budget</span>
+            <span>Price</span>
             <input ref={minRef} type="number" placeholder="min" />
             <input ref={maxRef} type="number" placeholder="max" />
             <button onClick={apply}>Apply</button>
@@ -74,11 +69,14 @@ function Gigs() {
           </div>
         </div>
         <div className="cards">
-          {isLoading
-            ? "loading"
-            : error
-            ? "Something went wrong!"
-            : data.map((gig) => <GigCard key={gig._id} item={gig} />)}
+          {isLoading ? (
+            <div className="catalog-message">Scout is checking the racks...</div>
+          ) : (error || !data?.length) ? (
+            <>
+              <div className="offline-note"><strong>Scout’s curated edit</strong><span>Live inventory will appear when the marketplace service is connected.</span></div>
+              {curatedGigs.map((gig) => <GigCard key={gig.id} item={{ ...gig, isLocal: true, _id: gig.id }} />)}
+            </>
+          ) : data.map((gig) => <GigCard key={gig._id} item={gig} />)}
         </div>
       </div>
     </div>

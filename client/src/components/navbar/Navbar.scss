@@ -1,117 +1,25 @@
-.navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #013914;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  transition: 0.5s all ease;
-
-  &.active {
-    background-color: white;
-    color: black;
-
-    button {
-      background-color: white !important;
-      color: #1dbf73 !important;
-      border: 1px solid #1dbf73 !important;
-    }
-  }
-
-  .container {
-    width: 1400px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0px;
-
-    .logo {
-      font-size: 34px;
-      font-weight: bold;
-
-      .text {
-      }
-
-      .dot {
-        font-weight: bold;
-        color: #1dbf73;
-      }
-    }
-    .links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 500;
-
-      span {
-        white-space: nowrap;
-      }
-
-      .user {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
-        position: relative;
-
-        img {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          object-fit: cover;
-        }
-
-        .options {
-          position: absolute;
-          top: 50px;
-          right: 0;
-          padding: 20px;
-          background-color: white;
-          border-radius: 10px;
-          z-index: 999;
-          border: 1px solid lightgrey;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          width: 200px;
-          font-weight: 300;
-          color: gray;
-        }
-      }
-
-      button {
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: 1px solid white;
-        background-color: transparent;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #1dbf73;
-          border-color: #1dbf73;
-        }
-      }
-    }
-  }
-
-  hr {
-    width: calc(100% - 2px);
-    height: 0;
-    border-top: 0.5px solid #ebe9e9;
-    border-bottom: 0.5px solid #ebe9e9;
-  }
-
-  .menu {
-    width: 1400px;
-    padding: 10px 0px;
-    display: flex;
-    justify-content: space-between;
-    color: gray;
-    font-weight: 300;
-    font-family: "Montserrat", sans-serif;
-  }
+.navbar { display: flex; flex-direction: column; align-items: center; background: #173b2d; color: #fff; position: sticky; top: 0; z-index: 999; border-bottom: 1px solid rgba(255,255,255,.16); transition: background .2s ease;
+  &.active { background: #fffdf7; color: #17221d; border-color: #d8d4ca; }
+  .container { width: min(1180px, calc(100% - 48px)); min-height: 68px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font: 700 30px Georgia, serif; } .dot { color: #ff6b4a; }
+  .links { display: flex; align-items: center; gap: 24px; font-size: 14px; font-weight: 700; }
+  .seller-link { color: inherit; }
+  .user { display: flex; align-items: center; gap: 10px; cursor: pointer; position: relative; }
+  .user > img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+  .options { position: absolute; top: 44px; right: 0; padding: 16px; background: #fffdf7; color: #17221d; border: 1px solid #17221d; display: flex; flex-direction: column; gap: 12px; width: 180px; box-shadow: 6px 6px 0 #e9ff70; }
+  .links button { color: #17221d; padding: 10px 16px; border: 1px solid #e9ff70; background: #e9ff70; cursor: pointer; font-weight: 800; }
+  &.active .links button { border-color: #17221d; }
+  hr { width: 100%; margin: 0; border: 0; border-top: 1px solid #e5e1d7; }
+  .menu { width: min(1180px, calc(100% - 48px)); min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #59635d; font-size: 12px; font-weight: 700; }
+  .menuLink:hover { color: #ff6b4a; }
+  .scout-link { color: #173b2d; background: #e9ff70; padding: 5px 9px; border: 1px solid #17221d; }
 }
+@media (max-width: 760px) { .navbar {
+  .container { width: calc(100% - 32px); min-height: 62px; }
+  .logo { font-size: 27px; }
+  .discover-link, .seller-link { display: none; }
+  .links { gap: 12px; }
+  .links button { padding: 8px 11px; }
+  .menu { width: calc(100% - 32px); overflow-x: auto; justify-content: flex-start; padding: 0 16px; scrollbar-width: none; }
+  .menuLink { white-space: nowrap; }
+} }

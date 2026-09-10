@@ -1,5 +1,5 @@
 import "./app.scss";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Link, Outlet, RouterProvider, useLocation } from "react-router-dom";
 import React from "react";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -19,14 +19,36 @@ import {
 } from "@tanstack/react-query";
 import Pay from "./pages/pay/Pay";
 import Success from "./pages/success/Success";
-function App() {
-  const queryClient = new QueryClient();
+import { useEffect } from "react";
 
+const queryClient = new QueryClient();
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
+function NotFound() {
+  return (
+    <main className="not-found">
+      <span>404 / Lost in the racks</span>
+      <h1>This find has moved on.</h1>
+      <p>The good news: there is always something else worth discovering.</p>
+      <Link to="/gigs">Browse the marketplace</Link>
+    </main>
+  );
+}
+
+function App() {
   const Layout = () => {
     return (
       <div className="app">
         <QueryClientProvider client={queryClient}>
           <Navbar />
+          <ScrollToTop />
           <Outlet />
           <Footer />
         </QueryClientProvider>
@@ -86,6 +108,10 @@ function App() {
         {
           path: "/success",
           element: <Success />,
+        },
+        {
+          path: "*",
+          element: <NotFound />,
         },
       ],
     },

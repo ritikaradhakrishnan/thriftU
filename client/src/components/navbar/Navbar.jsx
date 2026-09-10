@@ -23,6 +23,13 @@ function Navbar() {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   const navigate = useNavigate();
+  const categories = [
+    ["Vintage", "vintage clothing"],
+    ["Home", "home decor"],
+    ["Books", "rare books"],
+    ["Records", "vinyl records"],
+    ["Cameras", "retro cameras"],
+  ];
 
   const handleLogout = async () => {
     try {
@@ -44,7 +51,8 @@ function Navbar() {
           <span className="dot">.</span>
         </div>
         <div className="links">
-          {!currentUser?.isSeller && <span>Become a Seller</span>}
+          <Link className="link discover-link" to="/gigs">Discover</Link>
+          {!currentUser?.isSeller && <Link className="link seller-link" to="/register">Sell on thriftU</Link>}
           {currentUser ? (
             <div className="user" onClick={() => setOpen(!open)}>
               <img src={currentUser.img || "/img/noavatar.jpg"} alt="" />
@@ -53,11 +61,11 @@ function Navbar() {
                 <div className="options">
                   {currentUser.isSeller && (
                     <>
-                      <Link className="link" to="/mygigs">
-                        Gigs
+                      <Link className="link" to="/myGigs">
+                        My listings
                       </Link>
                       <Link className="link" to="/add">
-                        Add New Gig
+                        Add a listing
                       </Link>
                     </>
                   )}
@@ -77,7 +85,7 @@ function Navbar() {
             <>
               <Link to="/login" className="link">Sign in</Link>
               <Link className="link" to="/register">
-                <button>Join</button>
+                <button>Join thriftU</button>
               </Link>
             </>
           )}
@@ -87,33 +95,10 @@ function Navbar() {
         <>
           <hr />
           <div className="menu">
-            <Link className="link menuLink" to="/">
-              Vintage Clothing
-            </Link>
-            <Link className="link menuLink" to="/">
-              Furniture
-            </Link>
-            <Link className="link menuLink" to="/">
-              Rare Books
-            </Link>
-            <Link className="link menuLink" to="/">
-              Collectibles and Antiques
-            </Link>
-            <Link className="link menuLink" to="/">
-              Records and CDs
-            </Link>
-            <Link className="link menuLink" to="/">
-              Hand Made Soaps
-            </Link>
-            <Link className="link menuLink" to="/">
-              Rare Gem stones
-            </Link>
-            <Link className="link menuLink" to="/">
-              Art and Decor
-            </Link>
-            <Link className="link menuLink" to="/">
-              Shoes
-            </Link>
+            {categories.map(([label, query]) => (
+              <Link className="link menuLink" key={label} to={`/gigs?search=${encodeURIComponent(query)}`}>{label}</Link>
+            ))}
+            <Link className="link menuLink scout-link" to="/gigs?search=curated+vintage">AI Scout</Link>
           </div>
           <hr />
         </>

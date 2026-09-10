@@ -1,190 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.scss";
 import Featured from "../../components/featured/Featured";
-import TrustedBy from "../../components/trustedBy/TrustedBy";
-import Slide from "../../components/slide/Slide";
-import CatCard from "../../components/catCard/CatCard";
-import ProjectCard from "../../components/projectCard/ProjectCard";
 import { cards, projects } from "../../data";
+
+const categories = [["Vintage wear", "vintage clothing"], ["Home finds", "home decor"], ["Records", "vinyl records"], ["Rare books", "rare books"], ["Cameras", "retro cameras"], ["Collectibles", "collectibles"]];
 
 function Home() {
   return (
-    <div className="home">
+    <main className="home">
       <Featured />
-      <TrustedBy />
-      <Slide slidesToShow={5} arrowsScroll={5}>
-        {cards.map((card) => (
-          <CatCard key={card.id} card={card} />
-        ))}
-      </Slide>
-      <div className="features">
-        <div className="container">
-        <div className="item">
-          <h1>Discover Unique Finds at Unbeatable Prices</h1>
-          <div className="title">
-            <img src="./img/check.png" alt="" />
-            Treasures for Every Budget
-          </div>
-          <p>
-            Explore a wide range of items at all price points. Enjoy the thrill of thrift without breaking the bank.
-          </p>
-          <div className="title">
-            <img src="./img/check.png" alt="" />
-            Quality Finds, Quick Shopping
-          </div>
-          <p>
-            Dive into a selection of quality pre-loved items and discover your next treasure in minutes.
-          </p>
-          <div className="title">
-            <img src="./img/check.png" alt="" />
-            Satisfaction with Every Purchase
-          </div>
-          <p>
-            Shop with confidence. Our commitment to quality ensures you love every item you find.
-          </p>
-          <div className="title">
-            <img src="./img/check.png" alt="" />
-            Friendly Assistance Anytime
-          </div>
-          <p>
-            Our team is here to help you find what you're looking for, making your thrift store experience enjoyable and effortless.
-          </p>
-        </div>
-          <div className="item">
-            <video src="./img/video.mp4" controls />
-          </div>
-        </div>
-      </div>
-      <div className="explore">
-        <div className="container">
-          <h1>Explore the marketplace</h1>
-          <div className="items">
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Vintage Goods</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg"
-                alt=""
-              />
-              <div className="line"></div>
-
-              <span>Digital Collectibles</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Rare Books</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Flim Reels</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Music Players</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Refurbished Tech</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Small Business</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Lifestyle</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/data.718910f.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Book Collections</span>
-            </div>
-            <div className="item">
-              <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/photography.01cf943.svg"
-                alt=""
-              />
-              <div className="line"></div>
-              <span>Rare Cameras</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="features dark">
-  <div className="container">
-    <div className="item">
-      <h1>
-        ThriftU <i>Business</i>
-      </h1>
-      <h1>
-        Sustainable Solutions Designed for <i>People</i>
-      </h1>
-      <p>
-        Elevate your business with eco-friendly choices. Enjoy a curated thrift experience with benefits tailored for business clients.
-      </p>
-      <div className="title">
-        <img src="./img/check.png" alt="" />
-        Personalized Assistance for Bulk Buys
-      </div>
-      <p>
-        Get help from our experienced team to select the best items in bulk, tailored to your business style and needs.
-      </p>
-      <div className="title">
-        <img src="./img/check.png" alt="" />
-        Cost-Effective Shopping, Corporate Responsibility
-      </div>
-      <p>
-        Save on expenses while demonstrating your commitment to sustainability and corporate social responsibility.
-      </p>
-      <button>Explore ThriftU Business</button>
-    </div>
-    <div className="item">
-      <img
-        src="img/hq720.jpeg"
-        alt="Thrift Store Interior"
-      />
-    </div>
-  </div>
-</div>
-      <Slide slidesToShow={4} arrowsScroll={4}>
-        {projects.map((card) => (
-          <ProjectCard key={card.id} card={card} />
-        ))}
-      </Slide>
-    </div>
+      <section className="category-strip" aria-label="Marketplace categories"><div className="section-inner">
+        {categories.map(([label, query], index) => <Link key={label} to={`/gigs?search=${encodeURIComponent(query)}`}><span>0{index + 1}</span>{label}</Link>)}
+      </div></section>
+      <section className="editorial-section"><div className="section-inner">
+        <div className="section-heading"><div><span className="kicker">Freshly unearthed</span><h2>Finds with a past</h2></div><Link to="/gigs">Shop all finds →</Link></div>
+        <div className="story-grid">{cards.slice(0, 4).map((card, index) => <Link className={`story-card card-${index + 1}`} key={card.id} to={`/gigs?search=${encodeURIComponent(card.title)}`}><img src={card.img} alt={card.title} /><span>{card.desc}</span><h3>{card.title.replace(",", "")}</h3></Link>)}</div>
+      </div></section>
+      <section className="ai-studio"><div className="section-inner">
+        <div className="ai-copy"><span className="kicker">Powered by taste, assisted by AI</span><h2>Describe the vibe.<br />We’ll find the piece.</h2><p>Search by era, mood, material, color, or an oddly specific memory. Scout turns natural language into a personal thrift edit.</p><Link to="/gigs?search=one-of-a-kind+vintage">Try Scout →</Link></div>
+        <div className="prompt-window"><div className="window-bar"><span /><span /><span /><b>THRIFTU.SCOUT</b></div><div className="prompt-body"><small>YOUR PROMPT</small><p>“A camera that looks like it travelled across Europe in 1978.”</p><div className="thinking"><i /><span>Reading your taste...</span></div><div className="result-tags"><span>35mm</span><span>lived-in</span><span>under $120</span></div></div></div>
+      </div></section>
+      <section className="seller-section"><div className="section-inner">
+        <div className="section-heading"><div><span className="kicker">People behind the pieces</span><h2>Meet the curators</h2></div><Link to="/register">Start selling →</Link></div>
+        <div className="seller-grid">{projects.slice(0, 4).map((seller) => <Link to={`/gigs?search=${encodeURIComponent(seller.cat)}`} className="seller" key={seller.id}><img src={seller.img} alt={seller.cat} /><div><img src={seller.pp} alt="" /><span><strong>{seller.cat}</strong>{seller.username}</span></div></Link>)}</div>
+      </div></section>
+      <section className="impact-band"><div className="section-inner"><div><strong>12k+</strong><span>pieces recirculated</span></div><div><strong>4.8/5</strong><span>community rating</span></div><div><strong>1 of 1</strong><span>always more interesting</span></div></div></section>
+    </main>
   );
 }
 

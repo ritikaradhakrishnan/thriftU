@@ -1,27 +1,27 @@
 export const cards = [
   {
     id: 1,
-    title: "Thrifty Gourmet",
-    desc: "Modern Cooking",
-    img: "https://images.pexels.com/photos/7532110/pexels-photo-7532110.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    title: "Archive Denim",
+    desc: "Worn well since the 90s",
+    img: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=85",
   },
   {
     id: 2,
-    title: "Pantry Picks",
-    desc: "Build your kitchen",
-    img: "https://images.pexels.com/photos/11295165/pexels-photo-11295165.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    title: "Analog Stories",
+    desc: "Cameras with character",
+    img: "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&w=1200&q=85",
   },
   {
     id: 3,
-    title: "Collectibles",
-    desc: "Customize your home",
-    img: "https://images.pexels.com/photos/4371669/pexels-photo-4371669.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    title: "Sunday Vinyl",
+    desc: "Records worth replaying",
+    img: "https://images.unsplash.com/photo-1461360228754-6e81c478b882?auto=format&fit=crop&w=1200&q=85",
   },
   {
     id: 4,
-    title: "Timeless Treasures,",
-    desc: "Share your message",
-    img: "https://images.pexels.com/photos/7608079/pexels-photo-7608079.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    title: "Shelf Life",
+    desc: "Old books, new readers",
+    img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=85",
   },
   {
     id: 5,
@@ -111,7 +111,7 @@ export const projects = [
 export const gigs = [
   {
     id: 1,
-    img: "https://images.pexels.com/photos/580151/pexels-photo-580151.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    img: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=82",
     pp: "https://images.pexels.com/photos/720598/pexels-photo-720598.jpeg?auto=compress&cs=tinysrgb&w=1600",
     desc: "Vintage clothing curation and styling consultation",
     price: 59,
@@ -120,7 +120,7 @@ export const gigs = [
   },
   {
     id: 2,
-    img: "https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=82",
     pp: "https://images.pexels.com/photos/1036627/pexels-photo-1036627.jpeg?auto=compress&cs=tinysrgb&w=1600",
     desc: "Personalized antique jewelry sourcing and appraisal",
     price: 79,
@@ -129,7 +129,7 @@ export const gigs = [
   },
   {
     id: 3,
-    img: "https://images.pexels.com/photos/8797307/pexels-photo-8797307.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=82",
     pp: "https://images.pexels.com/photos/1062280/pexels-photo-1062280.jpeg?auto=compress&cs=tinysrgb&w=1600",
     desc: "Custom upcycling of vintage furniture pieces",
     price: 112,
@@ -138,7 +138,7 @@ export const gigs = [
   },
   {
     id: 4,
-    img: "https://images.pexels.com/photos/5708069/pexels-photo-5708069.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    img: "https://images.unsplash.com/photo-1461360228754-6e81c478b882?auto=format&fit=crop&w=900&q=82",
     pp: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600",
     desc: "Restoration of classic vinyl records and audio equipment",
     price: 99,
@@ -147,7 +147,7 @@ export const gigs = [
   },
   {
     id: 5,
-    img: "https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=82",
     pp: "https://images.pexels.com/photos/1771383/pexels-photo-1771383.jpeg?auto=compress&cs=tinysrgb&w=1600",
     desc: "Curated collection of rare and vintage books",
     price: 59,
@@ -156,7 +156,7 @@ export const gigs = [
   },
   {
     id: 6,
-    img: "https://images.pexels.com/photos/8100784/pexels-photo-8100784.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=82",
     pp: "https://images.pexels.com/photos/715546/pexels-photo-715546.jpeg?auto=compress&cs=tinysrgb&w=1600",
     desc: "Eco-friendly home decor and sustainable living consultation",
     price: 79,
@@ -165,7 +165,7 @@ export const gigs = [
   },
   {
     id: 7,
-    img: "https://images.pexels.com/photos/6039245/pexels-photo-6039245.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    img: "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&w=900&q=82",
     pp: "https://images.pexels.com/photos/720606/pexels-photo-720606.jpeg?auto=compress&cs=tinysrgb&w=1600",
     desc: "Expert sourcing of retro and vintage kitchenware",
     price: 89,
@@ -174,7 +174,7 @@ export const gigs = [
   },
   {
     id: 8,
-    img: "https://images.pexels.com/photos/5490778/pexels-photo-5490778.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    img: "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?auto=format&fit=crop&w=900&q=82",
     pp: "https://images.pexels.com/photos/1699159/pexels-photo-1699159.jpeg?auto=compress&cs=tinysrgb&w=1600",
     desc: "Handpicked selection of classic toys and collectibles",
     price: 110,

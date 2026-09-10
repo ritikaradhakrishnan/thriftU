@@ -1,44 +1,12 @@
-.login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  form {
-    width: 360px;
-    padding: 100px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    h1 {
-      color: gray;
-      margin-bottom: 20px;
-    }
-
-    label {
-      color: gray;
-      font-size: 18px;
-    }
-
-    input,
-    textarea {
-      padding: 20px;
-      border: 1px solid rgb(216, 214, 214);
-    }
-
-    button {
-      border: none;
-      padding: 20px;
-      color: white;
-      font-weight: 500;
-      font-size: 18px;
-      background-color: #1dbf73;
-      cursor: pointer;
-    }
-
-    span{
-      color: red;
-      font-size: 12px;
-    }
-  }
+.login { min-height: 72vh; display: grid; place-items: center; padding: 72px 24px; background: #f7f3e8;
+  form { width: min(100%, 440px); padding: 38px; display: flex; flex-direction: column; gap: 12px; background: #fffdf7; border: 1px solid #17221d; box-shadow: 10px 10px 0 #e9ff70; }
+  .form-kicker { color: #647067; font-size: 11px; font-weight: 800; text-transform: uppercase; }
+  h1 { margin: 4px 0 0; font: 500 38px Georgia, serif; }
+  p { margin: 0 0 20px; color: #647067; line-height: 1.5; }
+  label { margin-top: 7px; font-size: 12px; font-weight: 800; }
+  input { height: 48px; padding: 0 13px; border: 1px solid #bcb9b1; background: white; outline: none; }
+  input:focus { border-color: #173b2d; box-shadow: 0 0 0 2px #e9ff70; }
+  button { margin-top: 13px; min-height: 48px; border: 1px solid #17221d; background: #ff6b4a; color: #17221d; font-weight: 900; cursor: pointer; }
+  .form-error { color: #a42f1b; font-size: 12px; }
 }
+@media (max-width: 520px) { .login form { padding: 28px 22px; box-shadow: 6px 6px 0 #e9ff70; } }
