@@ -6,13 +6,58 @@
 To start the API server, open your terminal and run the following commands:
 ```bash
 cd api
-yarn start
+npm install
+npm run dev
 ```
 ### Starting the Client Side
 To start the client application, open your terminal and run the following commands:
 ```bash
 cd client
-yarn run dev
+npm install --legacy-peer-deps
+npm run dev
+```
+
+## Deployment
+
+The app is split into two deployable services:
+
+- `api`: Node/Express backend
+- `client`: Vite React frontend
+
+### API service
+
+Use these settings on a Node host such as Render:
+
+- Root directory: `api`
+- Build command: `npm install`
+- Start command: `npm start`
+
+Set these environment variables:
+
+```bash
+MONGO=your_mongodb_connection_string
+JWT_KEY=your_jwt_secret
+STRIPE=your_stripe_secret_key
+CLIENT_URL=https://your-client-domain
+NODE_ENV=production
+```
+
+The API also supports `PORT`, which most hosts set automatically.
+
+### Client service
+
+Use these settings on a static host such as Vercel:
+
+- Root directory: `client`
+- Build command: `npm install --legacy-peer-deps && npm run build`
+- Output directory: `dist`
+
+Set these environment variables:
+
+```bash
+VITE_API_URL=https://your-api-domain/api/
+VITE_UPLOAD_LINK=your_cloudinary_upload_endpoint
+VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
 ```
 Technologies Used:
 

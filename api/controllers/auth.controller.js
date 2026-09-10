@@ -3,6 +3,12 @@ import createError from "../utils/createError.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+const cookieOptions = {
+  httpOnly: true,
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  secure: process.env.NODE_ENV === "production",
+};
+
 export const register = async (req, res, next) => {
   try {
     const hash = bcrypt.hashSync(req.body.password, 5);
@@ -37,9 +43,7 @@ export const login = async (req, res, next) => {
 
     const { password, ...info } = user._doc;
     res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-      })
+      .cookie("accessToken", token, cookieOptions)
       .status(200)
       .send(info);
   } catch (err) {
@@ -49,10 +53,7 @@ export const login = async (req, res, next) => {
 
 export const logout = async (req, res) => {
   res
-    .clearCookie("accessToken", {
-      sameSite: "none",
-      secure: true,
-    })
+    .clearCookie("accessToken", cookieOptions)
     .status(200)
     .send("User has been logged out.");
 };

@@ -14,6 +14,8 @@ import cors from "cors";
 const app = express();
 dotenv.config();
 mongoose.set("strictQuery", true);
+const port = process.env.PORT || 8800;
+const clientUrl = process.env.CLIENT_URL || "http://localhost:5173";
 
 const connect = async () => {
   try {
@@ -24,9 +26,13 @@ const connect = async () => {
   }
 };
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: clientUrl, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
+
+app.get("/", (req, res) => {
+  res.status(200).send("thriftU API is running.");
+});
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
@@ -43,7 +49,7 @@ app.use((err, req, res, next) => {
   return res.status(errorStatus).send(errorMessage);
 });
 
-app.listen(8800, () => {
+app.listen(port, () => {
   connect();
-  console.log("Backend server is running!");
+  console.log(`Backend server is running on port ${port}!`);
 });
