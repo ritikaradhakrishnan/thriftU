@@ -26,7 +26,8 @@ The app is split into two deployable services:
 
 ### API service
 
-Use these settings on a Node host such as Render:
+Use these settings on a Node host such as Render. This repo also includes
+`render.yaml`, so Render can prefill these settings from the blueprint.
 
 - Root directory: `api`
 - Build command: `npm install`
@@ -38,11 +39,17 @@ Set these environment variables:
 MONGO=your_mongodb_connection_string
 JWT_KEY=your_jwt_secret
 STRIPE=your_stripe_secret_key
-CLIENT_URL=https://your-client-domain
+CLIENT_URL=https://thrift-u.vercel.app
 NODE_ENV=production
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=your_email@example.com
+SMTP_PASS=your_email_app_password
+SMTP_FROM="thriftU <your_email@example.com>"
 ```
 
-The API also supports `PORT`, which most hosts set automatically.
+The API also supports `PORT`, which Render sets automatically.
 
 ### Client service
 
